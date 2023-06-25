@@ -1,4 +1,3 @@
-import "./App.css";
 import Greet from "./Componnets/FirstTest/Greet";
 
 function App() {
