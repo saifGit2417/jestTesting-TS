@@ -2,8 +2,11 @@ import { Application } from "./Componnets/Application/Application";
 import Application2 from "./Componnets/Application2/Application2";
 import Greet from "./Componnets/FirstTest/Greet";
 import Button from "./Componnets/MuiButton/Button";
+import Skills from "./Componnets/Skills/Skills";
 
 function App() {
+  const skillArray = ["html", "css", "js", "react"];
+
   return (
     <div className="App">
       {/* <Button
@@ -18,7 +21,9 @@ function App() {
         typeOfAction={alert}
       />
       <Application/> */}
-      <Application2 />
+      {/* <Application2 /> */}
+      <Skills skills={skillArray} status={true} />
+      <Skills skills={skillArray} status={false} />
     </div>
   );
 }
