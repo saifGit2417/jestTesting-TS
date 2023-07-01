@@ -3,6 +3,8 @@ import Application2 from "./Componnets/Application2/Application2";
 import Greet from "./Componnets/FirstTest/Greet";
 import Button from "./Componnets/MuiButton/Button";
 import Skills from "./Componnets/Skills/Skills";
+import './App.css'
+import Counter from "./Componnets/Counter/Counter";
 
 function App() {
   const skillArray = ["html", "css", "js", "react"];
@@ -19,10 +21,12 @@ function App() {
         buttonText={"i am alert"}
         functionText={"alert saif"}
         typeOfAction={alert}
-      />
-      <Application/> */}
+  /> */}
       {/* <Application2 /> */}
-      <Skills skills={skillArray} status={true} />
+      {/* <Application />
+      <Skills skills={skillArray} status={true} /> */}
+
+      <Counter/>
     </div>
   );
 }

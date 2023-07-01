@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { logRoles, render, screen } from "@testing-library/react";
 import React from "react";
 import Skills from "./Skills";
 
@@ -77,7 +77,8 @@ describe("Skill", () => {
 
   // to test async function which are going to be available after some time
   test("start learning button evantually appear", async () => {
-    render(<Skills skills={skillArray} />);
+    const view = render(<Skills skills={skillArray} />);
+    logRoles(view.container);
     const startLearningDelay = await screen.findByRole(
       "button",
       {
@@ -90,5 +91,3 @@ describe("Skill", () => {
     expect(startLearningDelay).toBeInTheDocument();
   });
 });
-
-
