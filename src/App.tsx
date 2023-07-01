@@ -23,7 +23,6 @@ function App() {
       <Application/> */}
       {/* <Application2 /> */}
       <Skills skills={skillArray} status={true} />
-      <Skills skills={skillArray} status={false} />
     </div>
   );
 }
