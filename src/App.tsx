@@ -7,7 +7,7 @@ import "./App.css";
 import Counter from "./Componnets/Counter/Counter";
 import { AppProviders } from "./Providers/app-provider";
 import { MuiMode } from "./Componnets/mui/mui-mode";
-
+import useCounter from "./Hooks/Use-Counter/useCounter";
 function App() {
   const skillArray = ["html", "css", "js", "react"];
 
@@ -29,11 +29,12 @@ function App() {
       <Skills skills={skillArray} status={true} /> */}
 
       {/* <Counter/> */}
-      <AppProviders>
+      {/* <AppProviders>
         <div className="app">
           <MuiMode />
         </div>
-      </AppProviders>
+      </AppProviders> */}
+
     </div>
   );
 }
