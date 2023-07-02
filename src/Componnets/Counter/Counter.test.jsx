@@ -43,10 +43,49 @@ describe("Counter", () => {
     const incrementButton2 = screen.getByRole("button", {
       name: /Increment/i
     });
-    await user.click(incrementButton2);
+    // await user.dblClick(incrementButton2);
     await user.click(incrementButton2);
     await user.click(incrementButton2);
     const countElement2 = screen.getByRole("heading");
-    expect(countElement2).toHaveTextContent("3");
+    expect(countElement2).toHaveTextContent("2");
+  });
+
+  // test("render a count of 10 after clicking set button", async () => {
+  //   const userClick = userEvent.default.setup();
+  //   render(<Counter />);
+  //   // get the input field and set the value of 10 as input
+  //   const inputField = screen.getByRole("spinbutton");
+  //   const userType = userEvent.default.type();
+  //   await userType(inputField, "10");
+  //   expect(inputField).toHaveValue(10);
+  //   // getting the button click event and activating it for once
+  //   const getButton = screen.getByRole("button", {
+  //     name: "Set"
+  //   });
+  //   await userClick.click(getButton);
+  //   // getting the heading where the value of input field is going to reflect
+  //   const getHeadingValue = screen.getByRole("heading");
+  //   expect(getHeadingValue).toHaveValue("10");
+  // });
+
+  test("element are focused in right order when press tab key", async () => {
+    const userClick = userEvent.default.setup();
+    render(<Counter />);
+    const getInputField = screen.getByRole("spinbutton");
+    const getIncrementButton = screen.getByRole("button", {
+      name: "Increment"
+    });
+    const getSetButton = screen.getByRole("button", {
+      name: "Set"
+    });
+    // to check focus wh click tab button 1st time
+    await userClick.tab();
+    expect(getIncrementButton).toHaveFocus();
+    // to check focus wh click tab button 2nd time
+    await userClick.tab();
+    expect(getInputField).toHaveFocus();
+    // to check focus wh click tab button 3rd time
+    await userClick.tab();
+    expect(getSetButton).toHaveFocus();
   });
 });
