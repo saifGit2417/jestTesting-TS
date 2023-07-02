@@ -3,8 +3,10 @@ import Application2 from "./Componnets/Application2/Application2";
 import Greet from "./Componnets/FirstTest/Greet";
 import Button from "./Componnets/MuiButton/Button";
 import Skills from "./Componnets/Skills/Skills";
-import './App.css'
+import "./App.css";
 import Counter from "./Componnets/Counter/Counter";
+import { AppProviders } from "./Providers/app-provider";
+import { MuiMode } from "./Componnets/mui/mui-mode";
 
 function App() {
   const skillArray = ["html", "css", "js", "react"];
@@ -26,7 +28,12 @@ function App() {
       {/* <Application />
       <Skills skills={skillArray} status={true} /> */}
 
-      <Counter/>
+      {/* <Counter/> */}
+      <AppProviders>
+        <div className="app">
+          <MuiMode />
+        </div>
+      </AppProviders>
     </div>
   );
 }
