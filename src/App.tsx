@@ -8,6 +8,7 @@ import Counter from "./Componnets/Counter/Counter";
 import { AppProviders } from "./Providers/app-provider";
 import { MuiMode } from "./Componnets/mui/mui-mode";
 import useCounter from "./Hooks/Use-Counter/useCounter";
+import Users from "./Componnets/Users/Users";
 function App() {
   const skillArray = ["html", "css", "js", "react"];
 
@@ -34,7 +35,7 @@ function App() {
           <MuiMode />
         </div>
       </AppProviders> */}
-
+      <Users />
     </div>
   );
 }
